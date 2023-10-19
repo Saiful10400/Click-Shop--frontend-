@@ -76,9 +76,10 @@ const BrandCard = ({ item }) => {
         </p>
 
         <div className="card-actions justify-center">
-          <button  className="btn btn-success">
+          <Link to={`/details/${_id}`}><button  className="btn btn-success">
             Details
-          </button>
+          </button></Link>
+
          <Link to={`/update/${_id}`}> <button   className="btn btn-warning">
             Update
           </button></Link>

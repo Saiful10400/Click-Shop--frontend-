@@ -8,6 +8,8 @@ import Apple from "./components/Home/brands/apple/Apple";
 import Realme from "./components/Home/brands/realme/Realme";
 import Google from "./components/Home/brands/google/Google";
 import Nothing from "./components/Home/brands/nothing/Nothing";
+import Update from "./components/root/Update";
+import Details from "./components/root/Details";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +58,16 @@ const router = createBrowserRouter([
         element: <Nothing></Nothing>,
         loader: () => fetch("https://assignment-10-mu.vercel.app/brand/nothing"),
       },
+      {
+        path:"/update/:id",
+        element:<Update></Update>,
+        loader:({params})=>fetch(`http://localhost:5000/update/${params.id}`)
+      },
+      {
+        path:"details/:id",
+        element:<Details></Details>,
+        loader:({params})=>fetch(`http://localhost:5000/update/${params.id}`)
+      }
     ],
   },
 ]);
