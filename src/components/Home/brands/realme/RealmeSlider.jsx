@@ -25,7 +25,21 @@ const ReallmeSlider = () => {
         <SwiperSlide>
           <img
             className="w-full h-[22vh] lg:h-[50vh]  object-cover"
-            src=""
+            src="https://static.c.realme.com/GLOBAL/thread/1634138941744480256.png"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="w-full h-[22vh] lg:h-[50vh]  object-cover"
+            src="https://gagadget.com/media/post_big/Realme-Narzo-50A.jpeg"
+            alt=""
+          />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img
+            className="w-full h-[22vh] lg:h-[50vh]  object-cover"
+            src="https://i.ytimg.com/vi/5VNA05STfPw/maxresdefault.jpg"
             alt=""
           />
         </SwiperSlide>

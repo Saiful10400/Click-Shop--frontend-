@@ -8,6 +8,7 @@ import oneplus from "../../../public/image/brand log/oneplus.png";
 import google from "../../../public/image/brand log/google.png";
 import nothing from "../../../public/image/brand log/nothing.png";
 import { Link } from "react-router-dom";
+import BestDeals from "./BestDeals";
 
 const Home = () => {
   return (
@@ -50,6 +51,7 @@ const Home = () => {
           </div>
         </Link>
       </div>
+      <BestDeals></BestDeals>
     </div>
   );
 };
