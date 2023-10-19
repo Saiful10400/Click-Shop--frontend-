@@ -20,7 +20,7 @@ const AddProduct = () => {
         console.log(newPhoneData)
         // data fetch to server.
 
-        fetch("http://localhost:5000/send/phone",{
+        fetch("https://assignment-10-mu.vercel.app/send/phone",{
           method:"post",
           headers:{
             "Content-type":"application/json"

@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import BrandCard from "../BrandCard";
 
 
 const Nothing = () => {
@@ -7,9 +8,11 @@ const Nothing = () => {
     return (
         <>
         <h1>total data :{data.length}</h1>
+        <div className="grid grid-cols-1 md:p-0 px-3 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {
-            data.map(item=><div><img src={item.url} alt="" /> <h1>{item.productName}</h1></div>)
+            data.map(item=><BrandCard key={item._id} item={item}></BrandCard>)
         }
+        </div>
         </>
     );
 };
