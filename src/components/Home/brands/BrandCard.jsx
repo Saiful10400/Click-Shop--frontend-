@@ -34,7 +34,7 @@ const detailsHandle=()=>{
 
         <div className="flex gap-2 lg:gap-4"><span className="bg-gray-200  lg:text-base font-medium rounded-sm p-[2px] lg:rounded-lg text-sm  lg:p-1 text-orange-500" >{brand}</span> <span className="bg-gray-200  lg:text-base font-medium rounded-sm p-[2px] lg:rounded-lg text-sm  lg:p-1 text-orange-500" >{type}</span> <span className="bg-gray-200  lg:text-base font-medium rounded-sm p-[2px] lg:rounded-lg text-sm  lg:p-1 text-orange-500" >{quality}</span></div>
 
-        <div className={`bg-gray-300 w-max text-lg font-normal rounded-lg p-2 ${rom?"hidden":"block"}`}><span>{ram} GB</span>+<span>{rom}GB</span></div>
+        <div className={`bg-gray-300 w-max text-lg font-normal rounded-lg p-2 ${ram==1?"hidden":"block"}`}><span>{ram} GB</span>+<span>{rom}GB</span></div>
         <h1 className="text-xl font-bold text-gray-700">{price} Taka</h1>
         <p className="h-36 text-base font-light overflow-hidden">{description}</p>
 
