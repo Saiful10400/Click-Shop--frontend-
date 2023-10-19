@@ -9,6 +9,7 @@ import google from "../../../public/image/brand log/google.png";
 import nothing from "../../../public/image/brand log/nothing.png";
 import { Link } from "react-router-dom";
 import BestDeals from "./BestDeals";
+import Flagship from "./Flagship";
 
 const Home = () => {
   return (
@@ -51,6 +52,7 @@ const Home = () => {
           </div>
         </Link>
       </div>
+      <Flagship></Flagship>
       <BestDeals></BestDeals>
     </div>
   );

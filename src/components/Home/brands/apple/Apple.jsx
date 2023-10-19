@@ -3,6 +3,7 @@ import BrandCard from "../BrandCard";
 import AppleSlider from './AppleSlider';
 
 
+
 const Apple = () => {
     const data=useLoaderData()
     console.log(data)

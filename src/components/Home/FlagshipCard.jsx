@@ -1,5 +1,6 @@
 import { AiTwotoneStar } from "react-icons/ai";
-const BesetDealsCard = ({ item }) => {
+
+const FlagshipCard = ({ item }) => {
   const {
     productName,
     url,
@@ -11,10 +12,11 @@ const BesetDealsCard = ({ item }) => {
     quality,
     ram,
     rom,
+    bestdeall,
   } = item;
   return (
     <div data-aos="fade-up" className="card w-full bg-base-100 shadow-xl">
-      <figure className=" w-full h-56 pt-2 relative ">
+      <figure className=" w-full h-56 pt-2 relative">
         <img
           className="w-full h-full object-contain"
           src={url}
@@ -38,16 +40,20 @@ const BesetDealsCard = ({ item }) => {
         </div>
 
         <div>
-          <span className="line-through">{price}৳</span>{" "}
-          <span className="bg-red-400 p-2 rounded-lg text-white">
+          <span className={bestdeall === "true" ? "line-through" : ""}>
+            {price}৳
+          </span>{" "}
+          <span
+            className={`bg-red-400 p-2 rounded-lg text-white ${
+              bestdeall === "true" ? "" : "hidden"
+            }`}
+          >
             {parseInt(parseInt(price) - parseInt(price) * 0.15 - 10)}৳
           </span>
         </div>
-
-       
       </div>
     </div>
   );
 };
 
-export default BesetDealsCard;
+export default FlagshipCard;
