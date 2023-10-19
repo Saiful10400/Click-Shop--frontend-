@@ -4,8 +4,8 @@ import Slider from "./Slider";
 import samsung from "../../../public/image/brand log/samsung.png";
 import apple from "../../../public/image/brand log/apple.png";
 import realme from "../../../public/image/brand log/realme.png";
-import mi from "../../../public/image/brand log/mi.png";
-import vivo from "../../../public/image/brand log/vivo.png";
+import oneplus from "../../../public/image/brand log/oneplus.png";
+import google from "../../../public/image/brand log/google.png";
 import nothing from "../../../public/image/brand log/nothing.png";
 import { Link } from "react-router-dom";
 
@@ -34,14 +34,14 @@ const Home = () => {
             <img className="w-full" src={realme} alt="" />
           </div>
         </Link>
-        <Link to={"/brands/mi"}>
+        <Link to={"/brands/oneplus"}>
           <div className=" shadow-xl hover:scale-110 transition-all lg:h-[200px] h-[100px] lg:w-[200px]  bg-gray-200 rounded-full p-2 flex justify-center items-center">
-            <img className="w-full" src={mi} alt="" />
+            <img className="w-full" src={oneplus} alt="" />
           </div>
         </Link>
-        <Link to={"/brands/vivo"}>
+        <Link to={"/brands/google"}>
           <div className=" shadow-xl hover:scale-110 transition-all lg:h-[200px] h-[100px] lg:w-[200px]  bg-gray-200 rounded-full p-2 flex justify-center items-center">
-            <img className="w-full" src={vivo} alt="" />
+            <img className="w-full" src={google} alt="" />
           </div>
         </Link>
         <Link to={"/brands/nothing"}>
