@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 export const parentContext=createContext(null)
-import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
+import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import auth from "../components/Authentication/firebase_config"
 
 
@@ -21,6 +21,19 @@ const googleLogin=()=>{
 return signInWithPopup(auth,googleProvider)
 }
 
+// email signup
+
+const emailSignup=(email,password)=>{
+    return createUserWithEmailAndPassword(auth,email,password)
+}
+
+// email signout handel
+
+const emailLogin=(email,password)=>{
+   return signInWithEmailAndPassword(auth,email,password)
+
+}
+
 // logout handle
 const logout=()=>{
    return signOut(auth)
@@ -28,7 +41,8 @@ const logout=()=>{
 
 
 
-    const data={googleLogin,user,logout}
+
+    const data={googleLogin,user,logout,emailSignup,emailLogin}
     return (
         <div>
             <parentContext.Provider value={data}>
