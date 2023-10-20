@@ -10,6 +10,8 @@ import Google from "./components/Home/brands/google/Google";
 import Nothing from "./components/Home/brands/nothing/Nothing";
 import Update from "./components/root/Update";
 import Details from "./components/root/Details";
+import Login from "./components/login&signup/Login";
+import Register from "./components/login&signup/Register";
 
 const router = createBrowserRouter([
   {
@@ -61,12 +63,20 @@ const router = createBrowserRouter([
       {
         path:"/update/:id",
         element:<Update></Update>,
-        loader:({params})=>fetch(`http://localhost:5000/update/${params.id}`)
+        loader:({params})=>fetch(`https://assignment-10-mu.vercel.app/update/${params.id}`)
       },
       {
         path:"details/:id",
         element:<Details></Details>,
-        loader:({params})=>fetch(`http://localhost:5000/update/${params.id}`)
+        loader:({params})=>fetch(`https://assignment-10-mu.vercel.app/update/${params.id}`)
+      },
+      {
+        path:"/login",
+        element:<Login></Login>
+      },
+      {
+        path:"/register",
+        element:<Register></Register>
       }
     ],
   },

@@ -1,8 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../../public/image/logo.png"
-
+import userc from "../../../public/image/user.png"
+import { useContext } from "react";
+import { parentContext } from "../DataProvider";
 const Navbar = () => {
+  const{user,logout}=useContext(parentContext)
 
+  const logoutHandle=()=>{
+    logout()
+    .then(res=>console.log(res))
+    .catch(error=>console.log(error))
+  }
   const li=(
     <>
     <li><NavLink to={"/"} className="btn lg:mx-2 leading-loose">Home</NavLink></li>
@@ -27,7 +35,7 @@ const Navbar = () => {
 
       </ul>
     </div>
-    <img className="w-24" src={logo} alt="" />
+    <img className="w-12 lg:w-20" src={logo} alt="" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -38,7 +46,15 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <div className="flex gap-1 lg:gap-3 items-center">
+      
+     <div className="flex flex-col justify-center items-center">
+     <img className="w-12 h-12 border-2 object-cover rounded-full" src={user? user.photoURL :userc} alt="" />
+      <span>{user?.displayName}</span>
+     </div>
+      <Link to={"/login"}><button className={`btn lg:btn-md btn-sm btn-primary ${user?"hidden":""}`}>Login</button></Link>
+       <button onClick={logoutHandle} className={`btn btn-primary lg:btn-md btn-sm ${user? "" : "hidden"}`}>logout</button> 
+    </div>
   </div>
 </div>
         </div>

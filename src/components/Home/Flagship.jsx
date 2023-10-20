@@ -5,7 +5,7 @@ import FlagshipCard from "./FlagshipCard";
 const Flagship = () => {
     const[data,setData]=useState([])
     useEffect(()=>{
-        fetch("http://localhost:5000/products/flagship")
+        fetch("https://assignment-10-mu.vercel.app/products/flagship")
         .then(res=>res.json())
         .then(datas=>setData(datas))
     },[])

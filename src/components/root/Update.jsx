@@ -23,7 +23,7 @@ const Update = () => {
         const rom=form.rom.value
         const id=_id
         const TobeData={id,productName,url,brand,type,price,ratings,description,bestdeall,quality,ram,rom}
-        fetch("http://localhost:5000/product/update",{
+        fetch("https://assignment-10-mu.vercel.app/product/update",{
           method:"post",
           headers:{
             "content-type":"application/json"

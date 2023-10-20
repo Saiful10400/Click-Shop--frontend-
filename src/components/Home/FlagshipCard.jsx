@@ -1,4 +1,5 @@
 import { AiTwotoneStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const FlagshipCard = ({ item }) => {
   const {
@@ -12,9 +13,11 @@ const FlagshipCard = ({ item }) => {
     quality,
     ram,
     rom,
+    _id,
     bestdeall,
   } = item;
   return (
+   <Link to={`details/${_id}`}>
     <div data-aos="fade-up" className="card w-full bg-base-100 shadow-xl">
       <figure className=" w-full h-56 pt-2 relative">
         <img
@@ -53,6 +56,7 @@ const FlagshipCard = ({ item }) => {
         </div>
       </div>
     </div>
+   </Link>
   );
 };
 

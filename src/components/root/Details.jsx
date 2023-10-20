@@ -7,10 +7,10 @@ const Details = () => {
   const data = useLoaderData();
   return (
     <div>
-      <div className="flex gap-3 lg:my-20">
-        <img className="w-1/3 h-96 object-contain" src={data.url} alt="" />
+      <div className="flex lg:px-0 px-4 my-3 lg:flex-row flex-col gap-3 lg:my-20">
+        <img className="w-full lg:w-1/3 h-96 object-contain" src={data.url} alt="" />
 
-        <div className="w-1/3">
+        <div className="w-full lg:w-1/3">
           <h1 className="text-4xl font-bold">{data.productName}</h1>
           <div className="flex gap-3 mt-4">
             <span className="border-2 text-sm px-1 rounded-sm">
@@ -61,7 +61,7 @@ const Details = () => {
           </div>
         </div>
 
-        <div className="w-1/3">
+        <div className="w-full lg:w-1/3">
           <p className="text-xl text-gray-400">
             <span className=" font-bold text-gray-500">3 months</span> warranty by Manufacturer <span className="font-bold text-gray-500">{data.brand.toUpperCase()}.</span> Manufacturer No: 
             <span className="text-gray-500 font-bold">{parseInt(Math.random()*100000000)}</span>.
