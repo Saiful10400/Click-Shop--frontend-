@@ -12,6 +12,7 @@ import Update from "./components/root/Update";
 import Details from "./components/root/Details";
 import Login from "./components/login&signup/Login";
 import Register from "./components/login&signup/Register";
+import Private from "./components/Authentication/Privete";
 
 const router = createBrowserRouter([
   {
@@ -24,11 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/myCart",
-        element: <Cart></Cart>,
+        element: <Private><Cart></Cart></Private>,
       },
       {
         path: "/addProduct",
-        element: <AddProduct></AddProduct>,
+        element: <Private><AddProduct></AddProduct></Private>,
       },
       {
         path: "/brands/samsung",
@@ -62,12 +63,12 @@ const router = createBrowserRouter([
       },
       {
         path:"/update/:id",
-        element:<Update></Update>,
+        element:<Private><Update></Update></Private>,
         loader:({params})=>fetch(`https://assignment-10-mu.vercel.app/update/${params.id}`)
       },
       {
         path:"details/:id",
-        element:<Details></Details>,
+        element:<Private><Details></Details></Private>,
         loader:({params})=>fetch(`https://assignment-10-mu.vercel.app/update/${params.id}`)
       },
       {

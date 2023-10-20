@@ -20,7 +20,7 @@ const[error,setError]=useState("")
         const email=form.email.value
         const password=form.password.value
         emailLogin(email,password)
-        .then(()=>swal("Welcome Back!", "You Successfully Logged in.", "success"))
+        .then(()=>swal("Welcome Back!", "You Successfully Logged in", "success"))
         .catch(()=>{
             setError("Err: Invalid Email Or Password.")
         })
@@ -28,8 +28,8 @@ const[error,setError]=useState("")
     
 
   return (
-    <div>
-      <div className="hero min-h-screen bg-base-200">
+    <div className="flex justify-center items-center">
+      
         <div className="card flex-shrink-0 w-full lg:w-96 shadow-2xl bg-base-100">
       <h1 className="text-center text-2xl mt-5 font-bold border-b-2">Login</h1>
           <form onSubmit={formHandle} className="card-body">
@@ -78,7 +78,7 @@ const[error,setError]=useState("")
             <button onClick={googleLoginHandle} className="btn w-full rounded-lg mb-6">Continue with google</button>
           </div>
         </div>
-      </div>
+      
     </div>
   );
 };

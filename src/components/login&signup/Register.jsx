@@ -32,8 +32,8 @@ const[error,setError]=useState("")
     }
     
   return (
-    <div>
-      <div className="hero min-h-screen bg-base-200">
+    <div className="flex justify-center items-center">
+       
         <div className="card flex-shrink-0 w-full lg:w-96 shadow-2xl bg-base-100">
             <h1 className="text-center text-2xl mt-5 font-bold border-b-2">Register</h1>
           <form onSubmit={formHandle} className="card-body">
@@ -77,7 +77,7 @@ const[error,setError]=useState("")
             </div>
           </form>
         </div>
-      </div>
+      
     </div>
   );
 };
