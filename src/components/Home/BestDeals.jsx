@@ -9,7 +9,7 @@ const BestDeals = () => {
         .then(res=>res.json())
         .then(datas=>setData(datas))
     },[])
-    console.log(data)
+    
     return (
         <div className="mb-5">
             <h1 className=" mt-10 mb-6 lg:mb-20 text-center text-gray-500 lg:mt-20 text-xl lg:text-4xl font-bold">Best Deals</h1>

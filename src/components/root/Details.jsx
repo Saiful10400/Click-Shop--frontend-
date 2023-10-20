@@ -2,9 +2,36 @@ import { useLoaderData } from "react-router-dom";
 import { MdLocalOffer } from "react-icons/md";
 import { AiOutlineDown } from "react-icons/ai";
 import { BsCart4 } from "react-icons/bs";
+import { useContext } from "react";
+import { parentContext } from "../DataProvider";
+import swal from "sweetalert";
 
 const Details = () => {
   const data = useLoaderData();
+  const{user}=useContext(parentContext)
+  
+
+
+  const formHandle=(e)=>{
+    e.preventDefault()
+    const form=e.target
+    const quantity=form.quantity.value
+    const userData={...data,email:user.email,quantity}
+
+    fetch("http://localhost:5000/add_to_cart",{
+      method:"post",
+      headers:{
+        "content-type":"application/json"
+      },
+      body:JSON.stringify(userData)
+    })
+    .then(res=>res.json())
+    .then(response=>{
+      swal("Product Added", "Checkout cart", "success")
+    })
+
+  }
+  
   return (
     <div>
       <div className="flex lg:px-0 px-4 my-3 lg:flex-row flex-col gap-3 lg:my-20">
@@ -71,9 +98,9 @@ const Details = () => {
           <div className="border border-gray-300"></div>
           <span className="relative bottom-3 text-gray-500 bg-white px-4">or</span>
           </div>
-          <form className="flex gap-4">
-            <input type="number" className="bg-gray-300 w-20 rounded-lg text-xl text-center outline-none py-2" defaultValue="1" />
-            <button className="bg-red-600 rounded-lg  text-white w-full"><span className="flex justify-center text-2xl gap-3"><BsCart4></BsCart4> Add to cart</span></button>
+          <form onSubmit={formHandle} className="flex gap-4">
+            <input name="quantity" type="number" className="bg-gray-300 w-20 rounded-lg text-xl text-center outline-none hidden py-2" defaultValue="1" />
+            <button className="bg-red-600 rounded-lg btn  text-white w-full"><span className="flex justify-center text-2xl gap-3"><BsCart4></BsCart4> Add to cart</span></button>
           </form>
         </div>
       </div>
