@@ -49,8 +49,8 @@ const Navbar = () => {
     <div className="flex gap-1 lg:gap-3 items-center">
       
      <div className="flex flex-col justify-center items-center">
-     <img className="w-12 h-12 border-2 object-cover rounded-full" src={user? user.photoURL :userc} alt="" />
-      <span>{user?.displayName}</span>
+     <img className="w-12 h-12 border-2 object-cover rounded-full" src={user?.photoURL? user.photoURL :userc} alt="" />
+      <span>{user?.displayName? user?.displayName :user?.email.slice(0,6)}</span>
      </div>
       <Link to={"/login"}><button className={`btn lg:btn-md btn-sm btn-primary ${user?"hidden":""}`}>Login</button></Link>
        <button onClick={logoutHandle} className={`btn btn-primary lg:btn-md btn-sm ${user? "" : "hidden"}`}>logout</button> 

@@ -4,7 +4,7 @@ import swal from "sweetalert";
 const CartItem = ({item}) => {
 
     const deleteHandle=()=>{
-        fetch("http://localhost:5000/card/delete",{
+        fetch("https://assignment-10-mu.vercel.app/card/delete",{
             method:"delete",
             headers:{
                 "content-type":"application/json"

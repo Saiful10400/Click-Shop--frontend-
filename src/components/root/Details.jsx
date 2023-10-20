@@ -18,7 +18,7 @@ const Details = () => {
     const quantity=form.quantity.value
     const userData={...data,email:user.email,quantity}
 
-    fetch("http://localhost:5000/add_to_cart",{
+    fetch("https://assignment-10-mu.vercel.app/add_to_cart",{
       method:"post",
       headers:{
         "content-type":"application/json"
@@ -35,7 +35,7 @@ const Details = () => {
   return (
     <div>
       <div className="flex lg:px-0 px-4 my-3 lg:flex-row flex-col gap-3 lg:my-20">
-        <img className="w-full lg:w-1/3 h-96 object-contain" src={data.url} alt="" />
+        <img className="w-full lg:w-1/3 h-56 lg:h-96 object-contain" src={data.url} alt="" />
 
         <div className="w-full lg:w-1/3">
           <h1 className="text-4xl font-bold">{data.productName}</h1>
@@ -104,6 +104,7 @@ const Details = () => {
           </form>
         </div>
       </div>
+      <p className="text-center lg:text-xl font-thin">{data.description}</p>
     </div>
   );
 };
