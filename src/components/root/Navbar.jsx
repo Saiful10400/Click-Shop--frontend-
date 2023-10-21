@@ -3,6 +3,8 @@ import logo from "../../../public/image/logo.png"
 import userc from "../../../public/image/user.png"
 import { useContext } from "react";
 import { parentContext } from "../DataProvider";
+import { BsFillMoonFill } from "react-icons/bs";
+import { BsFillSunFill } from "react-icons/bs";
 const Navbar = () => {
   const{user,logout}=useContext(parentContext)
 
@@ -40,8 +42,8 @@ const{darkHandle,dark}=useContext(parentContext)
 
       </ul>
     </div>
-    <Link to={"/"}><img className="w-12 lg:w-20" src={logo} alt="" /></Link>
-    <button onClick={darkHandle}  className="btn btn-secondary ">dark</button>
+    <Link to={"/"}><img className="w-32 lg:w-48" src={logo} alt="" /></Link>
+    <button onClick={darkHandle}  className="w-10  h-6    ">{!dark?<BsFillMoonFill className="w-full h-full object-contain"></BsFillMoonFill>:<BsFillSunFill className="w-full h-full object-contain"></BsFillSunFill>}</button>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
