@@ -1,5 +1,6 @@
 import { AiTwotoneStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { MdLocalOffer } from "react-icons/md";
 const BesetDealsCard = ({ item }) => {
   const {
     productName,
@@ -16,7 +17,7 @@ const BesetDealsCard = ({ item }) => {
   } = item;
   return (
     <Link to={`/details/${_id}`}><div data-aos="fade-up" className="card w-full bg-base-100 shadow-xl">
-    <figure className=" w-full h-56 pt-2 relative ">
+    <figure className=" w-full h-36 lg:h-56 pt-2 relative ">
       <img
         className="w-full h-full object-contain"
         src={url}
@@ -29,22 +30,44 @@ const BesetDealsCard = ({ item }) => {
     </figure>
 
     <div className="card-body p-0 px-1 pb-4 border-t-2 mt-3 text-start">
-      <h2 className="card-title text-lg lg:text-xl">{productName}</h2>
+      <h2 className="card-title text-base lg:text-xl  h-10 mt-2">{productName}</h2>
+
+
+
 
       <div
-        className={` w-max border-2 font-sans font-light rounded-lg p-2 ${
+        className={` w-max border-2 font-sans font-light rounded-lg p-1 lg:p-2 ${
           ram == 1 ? "hidden" : "block"
         }`}
       >
         <span>{ram} GB</span>+<span>{rom}GB</span>
       </div>
 
-      <div>
+
+      <div className={`${ram==1 && rom==1 ? "flex" : "hidden"} gap-1 lg:gap-2 lg:text-base text-sm`}>
+      <div
+        className={` w-max border-2 font-sans font-light rounded-lg p-1 lg:p-2`}
+      >
+        <span>{brand.toUpperCase()}</span>
+      </div>
+      <div
+        className={` w-max border-2 font-sans font-light rounded-lg p-2 `}
+      >
+        <span>{quality.toUpperCase()}</span>
+      </div>
+      </div>
+
+
+
+      <div className="text-sm lg:text-lg">
+        <span>Price: </span>
         <span className="line-through">{price}৳</span>{" "}
-        <span className="bg-red-400 p-2 rounded-lg text-white">
+        <span className="bg-red-400 p-1 lg:p-2 rounded-md lg:rounded-lg text-white">
           {parseInt(parseInt(price) - parseInt(price) * 0.15 - 10)}৳
         </span>
       </div>
+
+      <div className="bg-green-400 text-gray-600 rounded-md flex items-center justify-center gap-3"><MdLocalOffer></MdLocalOffer><span>save: {price*0.15}৳</span></div>
 
      
     </div>

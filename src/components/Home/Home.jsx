@@ -22,33 +22,33 @@ const Home = () => {
       <div className="grid mx-2 lg:mx-0 gap-5 lg:gap-3 grid-cols-2 lg:grid-cols-6">
         <Link to={"/brands/samsung"}>
           <div className=" shadow-xl hover:scale-110 transition-all lg:h-[200px] h-[100px] lg:w-[200px]  bg-gray-200 rounded-full p-2 flex justify-center items-center">
-            <img className="w-full" src={samsung} alt="" />
+            <img className="w-full object-contain" src={samsung} alt="" />
           </div>
         </Link>
 
         <Link to={"/brands/apple"}>
           <div className=" shadow-xl hover:scale-110 transition-all lg:h-[200px] h-[100px] lg:w-[200px]  bg-gray-200 rounded-full p-2 flex justify-center items-center">
-            <img className="w-full" src={apple} alt="" />
+            <img className="w-full h-20 object-contain" src={apple} alt="" />
           </div>
         </Link>
         <Link to={"/brands/realme"}>
           <div className=" shadow-xl hover:scale-110 transition-all lg:h-[200px] h-[100px] lg:w-[200px]  bg-gray-200 rounded-full p-2 flex justify-center items-center">
-            <img className="w-full" src={realme} alt="" />
+            <img className="w-full h-8 object-contain" src={realme} alt="" />
           </div>
         </Link>
         <Link to={"/brands/oneplus"}>
           <div className=" shadow-xl hover:scale-110 transition-all lg:h-[200px] h-[100px] lg:w-[200px]  bg-gray-200 rounded-full p-2 flex justify-center items-center">
-            <img className="w-full" src={oneplus} alt="" />
+            <img className="w-full h-32 object-contain" src={oneplus} alt="" />
           </div>
         </Link>
         <Link to={"/brands/google"}>
           <div className=" shadow-xl hover:scale-110 transition-all lg:h-[200px] h-[100px] lg:w-[200px]  bg-gray-200 rounded-full p-2 flex justify-center items-center">
-            <img className="w-full" src={google} alt="" />
+            <img className="w-full h-32 object-contain" src={google} alt="" />
           </div>
         </Link>
         <Link to={"/brands/nothing"}>
           <div className=" shadow-xl hover:scale-110 transition-all lg:h-[200px] h-[100px] lg:w-[200px]  bg-gray-200 rounded-full p-2 flex justify-center items-center">
-            <img className="w-full" src={nothing} alt="" />
+            <img className="w-full h-6 object-contain" src={nothing} alt="" />
           </div>
         </Link>
       </div>

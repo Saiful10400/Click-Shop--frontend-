@@ -34,10 +34,11 @@ const BrandCard = ({ item }) => {
           {ratings}/10
           <AiTwotoneStar></AiTwotoneStar>
         </span>
+        <span className={`absolute font-bold top-2 right-2 bg-red-500 text-white rounded-full w-11 h-11 flex justify-center items-center ${bestdeall=="true"?"":"hidden"}`}>-15%</span>
       </figure>
 
-      <div className="card-body">
-        <h2 className="card-title text-lg lg:text-3xl">{productName}</h2>
+      <div className="card-body px-4">
+        <h2 className="card-title text-3xl lg:text-3xl">{productName}</h2>
 
         <div className="flex gap-2 lg:gap-4">
           <span className="bg-gray-200  lg:text-base font-medium rounded-sm p-[2px] lg:rounded-lg text-sm  lg:p-1 text-orange-500">
@@ -52,7 +53,7 @@ const BrandCard = ({ item }) => {
         </div>
 
         <div
-          className={`bg-gray-300 w-max text-lg font-normal rounded-lg p-2 ${
+          className={`border-2 w-max text-lg font-normal rounded-lg p-2 ${
             ram == 1 ? "hidden" : "block"
           }`}
         >
@@ -60,6 +61,7 @@ const BrandCard = ({ item }) => {
         </div>
 
         <div className="text-xl">
+          <span>Price : </span>
           <span className={bestdeall === "true" ? "line-through" : ""}>
             {price}৳
           </span>{" "}
@@ -71,11 +73,11 @@ const BrandCard = ({ item }) => {
             {parseInt(parseInt(price) - parseInt(price) * 0.15 - 10)}৳
           </span>
         </div>
-        <p className="h-36 text-base font-light overflow-hidden">
-          {description}
+        <p className=" text-base font-light overflow-hidden">
+          {description.slice(1,100)} <span className="">{description.slice(101,105)+"..."}</span>
         </p>
 
-        <div className="card-actions justify-center">
+        <div className="card-actions justify-start">
           <Link to={`/details/${_id}`}><button  className="btn btn-success">
             Details
           </button></Link>

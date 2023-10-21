@@ -10,7 +10,7 @@ const Google = () => {
         <>
         <GoogleSlider></GoogleSlider>
         <h1 className="text-3xl font-bold lg:text-start text-center my-7">Total Products : {data.length}</h1>
-        <div className="grid grid-cols-1 md:p-0 px-3 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid my-10 grid-cols-1 md:p-0 px-3 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {
             data.map(item=><BrandCard key={item._id} item={item}></BrandCard>)
         }
