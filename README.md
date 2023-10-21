@@ -1,8 +1,10 @@
-# React + Vite
+client-side live link : https://click-shop-696f4.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Some bullet points about this project:
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+   1) User can log in to this site.
+   2) User can access her cart any time form any where.separete cart for separete user.
+   3) Only logged in user can update and add product on this site.
+   4) user can see best deal product on separete section.
+   5) on best deal section user can see how much he will get discount from a offer product.also he/she can see how much he got discount on a signgle product.
