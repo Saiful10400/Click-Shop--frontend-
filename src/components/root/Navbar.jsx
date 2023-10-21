@@ -6,6 +6,11 @@ import { parentContext } from "../DataProvider";
 const Navbar = () => {
   const{user,logout}=useContext(parentContext)
 
+  // dark mod.
+const{darkHandle,dark}=useContext(parentContext)
+
+
+
   const logoutHandle=()=>{
     logout()
     .then(res=>console.log(res))
@@ -20,9 +25,9 @@ const Navbar = () => {
     </>
   )
     return (
-        <div>
-            <div className="navbar bg-base-100">
-  <div className="navbar-start">
+        <div >
+            <div className={`navbar ${dark? "bg-gray-900 text-white" : "bg-white"}`}>
+  <div className="navbar-start flex gap-3 lg:gap-10">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -36,6 +41,7 @@ const Navbar = () => {
       </ul>
     </div>
     <Link to={"/"}><img className="w-12 lg:w-20" src={logo} alt="" /></Link>
+    <button onClick={darkHandle}  className="btn btn-secondary ">dark</button>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -46,6 +52,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
+    
     <div className="flex gap-1 lg:gap-3 items-center">
       
      <div className="flex flex-col justify-center items-center">

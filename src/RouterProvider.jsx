@@ -13,11 +13,14 @@ import Details from "./components/root/Details";
 import Login from "./components/login&signup/Login";
 import Register from "./components/login&signup/Register";
 import Private from "./components/Authentication/Privete";
+import Error from "./components/Error";
+import Oneplus from './components/Home/brands/onplus/Oneplus';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children: [
       {
         path: "/",
@@ -48,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/brands/oneplus",
-        element: <h1>samsung</h1>,
+        element: <Oneplus></Oneplus>,
         loader: () => fetch("https://assignment-10-mu.vercel.app/brand/oneplus"),
       },
       {

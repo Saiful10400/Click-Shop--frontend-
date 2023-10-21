@@ -38,8 +38,8 @@ const Details = () => {
         <img className="w-full lg:w-1/3 h-56 lg:h-96 object-contain" src={data.url} alt="" />
 
         <div className="w-full lg:w-1/3">
-          <h1 className="text-4xl font-bold">{data.productName}</h1>
-          <div className="flex gap-3 mt-4">
+          <h1 className="lg:text-4xl text-3xl font-bold">{data.productName}</h1>
+          <div className="flex gap-3 mt-2 lg:mt-4">
             <span className="border-2 text-sm px-1 rounded-sm">
               {data.rom}GB
             </span>
@@ -53,8 +53,8 @@ const Details = () => {
           <div className="flex items-center mt-4">
             <span className="text-2xl">BDT</span>
             <span className="text-center">
-              <span className="text-red-500 text-6xl">
-                {data.bestdeall ? data.price - data.price * 0.15 : data.price}
+              <span className="text-red-500 text-4xl lg:text-6xl">
+                {data.bestdeall=="true" ? new Intl.NumberFormat("en-IN").format(data.price - data.price * 0.15) : new Intl.NumberFormat("en-IN").format(data.price)}
               </span>
               <h1 className="text-sm text-gray-400 font-light -mt-2">
                 includes of VAT
@@ -69,7 +69,7 @@ const Details = () => {
             Split into <span className="font-extrabold">10</span> payments of
             BDT{" "}
             <span className="font-bold">
-              {data.price / 10 + data.price * 0.12}
+              {new Intl.NumberFormat("en-IN").format(data.price / 10 + data.price * 0.12)} 
             </span>
             /month (with service charges included) <br />
             <button className="text-indigo-500">{"Read More >"}</button>
@@ -83,7 +83,7 @@ const Details = () => {
               <MdLocalOffer></MdLocalOffer>
             </span>{" "}
             <span>
-              save: BDT<span className="font-bold">{data.price * 0.15}Tk</span>
+              save: BDT<span className="font-bold">{new Intl.NumberFormat("en-IN").format(data.price * 0.15)}Tk</span>
             </span>
           </div>
         </div>

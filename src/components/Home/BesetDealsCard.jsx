@@ -1,6 +1,8 @@
 import { AiTwotoneStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { MdLocalOffer } from "react-icons/md";
+import { useContext } from "react";
+import { parentContext } from "../DataProvider";
 const BesetDealsCard = ({ item }) => {
   const {
     productName,
@@ -15,8 +17,10 @@ const BesetDealsCard = ({ item }) => {
     _id,
     rom,
   } = item;
+
+  const{dark}=useContext(parentContext)
   return (
-    <Link to={`/details/${_id}`}><div data-aos="fade-up" className="card w-full bg-base-100 shadow-xl">
+    <Link to={`/details/${_id}`}><div data-aos="fade-up" className={`card w-full  shadow-xl ${dark? "bg-gray-700 shadow-slate-700" :"bg-base-100 "}`}>
     <figure className=" w-full h-36 lg:h-56 pt-2 relative ">
       <img
         className="w-full h-full object-contain"
@@ -61,13 +65,13 @@ const BesetDealsCard = ({ item }) => {
 
       <div className="text-sm lg:text-lg">
         <span>Price: </span>
-        <span className="line-through">{price}৳</span>{" "}
+        <span className="line-through">{new Intl.NumberFormat("en-IN").format(price)}৳</span>{" "}
         <span className="bg-red-400 p-1 lg:p-2 rounded-md lg:rounded-lg text-white">
-          {parseInt(parseInt(price) - parseInt(price) * 0.15 - 10)}৳
+          {new Intl.NumberFormat("en-IN").format(parseInt(parseInt(price) - parseInt(price) * 0.15 - 10))}৳
         </span>
       </div>
 
-      <div className="bg-green-400 text-gray-600 rounded-md flex items-center justify-center gap-3"><MdLocalOffer></MdLocalOffer><span>save: {price*0.15}৳</span></div>
+      <div className="bg-green-400 text-gray-600 rounded-md flex items-center justify-center gap-3"><MdLocalOffer></MdLocalOffer><span>save: {new Intl.NumberFormat("en-IN").format(price*0.15)}৳</span></div>
 
      
     </div>

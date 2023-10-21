@@ -5,7 +5,7 @@ import "swiper/css";
 // import "swiper/css/pagination";
 // import "swiper/css/navigation";
 
-const ReallmeSlider = () => {
+const OneplusSlider = () => {
   return (
     <>
       <Swiper
@@ -25,21 +25,21 @@ const ReallmeSlider = () => {
         <SwiperSlide>
           <img
             className="w-full h-[22vh] lg:h-[50vh]  object-cover"
-            src="https://image01.realme.net/general/20231019/1697686566340d4830f0b18864376a6246b720c0335ad.jpg.webp"
+            src="https://www.alezay.com/wp-content/uploads/2021/04/ONEPLUS-9-PRO-5G-ALEZAY-KUWAIT-MAIN-BANNER.jpg"
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             className="w-full h-[22vh] lg:h-[50vh]  object-cover"
-            src="https://image01.realme.net/general/20220914/1663146294241.jpg.webp"
+            src="https://www.themobileindian.com/wp-content/uploads/2021/06/1578289-3437ad5818fcc7d67a57724486945670.jpg"
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
             className="w-full h-[22vh] lg:h-[50vh]  object-cover"
-            src="https://image01.realme.net/general/20220124/1643017096290.jpg.webp"
+            src="https://www.penguin.com.bd/wp-content/uploads/2019/06/OnePlus-Pro-Banner-1.jpg"
             alt=""
           />
         </SwiperSlide>
@@ -48,4 +48,4 @@ const ReallmeSlider = () => {
   );
 };
 
-export default ReallmeSlider;
+export default OneplusSlider;

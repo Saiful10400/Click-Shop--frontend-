@@ -24,7 +24,7 @@ const CartItem = ({item}) => {
             <div>
                 <h1 className="text-xl font-bold">{item.productName}</h1>
                 <div className={`${item.ram==1?"hidden":""} flex gap-2 border-2  `}><span>{item.ram}GB</span><span>{item.rom}GB</span></div>
-                <div className="font-extrabold text-green-400">Price:{item.bestdeall=="true"? parseInt(item.price-item.price*0.15):item.price} tk</div>
+                <div className="font-extrabold text-green-400">Price: {item.bestdeall=="true"? new Intl.NumberFormat("en-IN").format(parseInt(item.price-item.price*0.15)):new Intl.NumberFormat("en-IN").format(item.price)} tk</div>
             </div>
             <div className=" flex lg:flex-row flex-col gap-4 justify-center items-center lg:gap-5">
                 <button onClick={()=>swal("Successfully your order Placed.", "You will notify soon", "success")} className="btn lg:btn-md btn-sm btn-primary">Checkout</button>

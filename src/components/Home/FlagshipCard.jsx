@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { AiTwotoneStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { parentContext } from "../DataProvider";
 
 const FlagshipCard = ({ item }) => {
   const {
@@ -16,9 +18,10 @@ const FlagshipCard = ({ item }) => {
     _id,
     bestdeall,
   } = item;
+  const{dark}=useContext(parentContext)
   return (
    <Link to={`details/${_id}`}>
-    <div data-aos="fade-up" className="card w-full bg-base-100 shadow-xl">
+    <div data-aos="fade-up" className={`card w-full  shadow-xl ${dark? "text-white bg-gray-700 shadow-stone-800" : "bg-base-100"}`}>
       <figure className=" w-full h-36 lg:h-56 pt-2 relative">
         <img
           className="w-full h-full object-contain"
@@ -39,20 +42,20 @@ const FlagshipCard = ({ item }) => {
             ram == 1 ? "hidden" : "block"
           }`}
         >
-          <span>{ram} GB</span>+<span>{rom}GB</span>
+          <span>{ram} GB</span>+<span>{new Intl.NumberFormat("en-IN").format(rom)}GB</span>
         </div>
 
         <div className="text-sm lg:text-lg">
           <span>Price: <span></span> </span>
           <span className={bestdeall === "true" ? "line-through" : ""}>
-            {price}৳
+            {new Intl.NumberFormat("en-IN").format(price)}৳
           </span>{" "}
           <span
             className={`bg-red-400 p-1 lg:p-2 rounded-md lg:rounded-lg text-white ${
               bestdeall === "true" ? "" : "hidden"
             }`}
           >
-            {parseInt(parseInt(price) - parseInt(price) * 0.15 - 10)}৳
+            {new Intl.NumberFormat("en-IN").format(parseInt(parseInt(price) - parseInt(price) * 0.15 - 10))}৳
           </span>
         </div>
       </div>

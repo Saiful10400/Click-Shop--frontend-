@@ -39,10 +39,19 @@ const logout=()=>{
    return signOut(auth)
 }
 
+// dark handel.
+ 
+const[dark,setDark]=useState(false)
 
 
+const darkHandle=()=>{
+    setDark(!dark)
+}
 
-    const data={googleLogin,user,logout,emailSignup,emailLogin}
+console.log(dark)
+
+
+    const data={googleLogin,user,logout,emailSignup,emailLogin,dark,darkHandle}
     return (
         <div>
             <parentContext.Provider value={data}>
